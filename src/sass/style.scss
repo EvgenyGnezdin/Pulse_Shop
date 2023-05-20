@@ -1,0 +1,15 @@
+@import 'base/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'MuseoModerno' cursive;
+}
+
+.container{
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/buttons'
