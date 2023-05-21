@@ -1,8 +1,7 @@
 @import 'base/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700&display=swap');
 
 *{
-    font-family: 'MuseoModerno' cursive;
+    font-family: 'Museo Sans Cyrl', sans-serif;
 }
 
 .container{
@@ -12,4 +11,8 @@
 
 @import 'blocks/promo';
 @import 'blocks/header';
-@import 'blocks/buttons'
+@import 'blocks/buttons';
+@import 'blocks/advantages';
+@import 'blocks/consultation';
+@import 'blocks/titles';
+@import 'blocks/forms';
