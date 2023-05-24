@@ -1,0 +1,37 @@
+.rewiews{
+    padding-right: 50px;
+    padding-bottom: 46px;
+    &__block{
+        display: flex;
+        margin-top: 60px;
+        justify-content: space-between;
+    &__img{
+        width: 169px;
+        height: 169px;
+    }
+    }
+    &__content{
+        max-width: 690px;
+    }
+    &__name{
+        color: #0D0D0D;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    &__micro-text{
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        color: #646464;
+    }
+    &__descr{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        align-items: flex-end;
+        color: #0D0D0D;
+    }
+}

@@ -10,7 +10,7 @@
     }
     &__tab{
         margin: 0 5px;
-        width: 222px;
+        width: 220px;
         height: 52px;
         background: rgba(0, 0, 0, 0.0001);
         border: 2px solid #D0D0D0;
@@ -37,15 +37,22 @@
         }
     }
         &__content{
+            display: none;
             margin-top: 60px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            &_active{
+                display: flex;
+            }
         }
         &-item{
             background: #FFFFFF;
             border: 2px solid #E8E8E8;
-            width: 303px;
+            width: 256px;
             min-height: 442px;
             padding: 20px 20px 26px 20px;
             overflow: hidden;
+            margin-bottom: 10px;
             &__img{
                 display: block;
                 margin: 0 auto;
@@ -149,6 +156,24 @@
                         top: 7px;    
                     }
                 }
+
             }
+            &__back{
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(calc(-50% - 19px));
+                display: block;
+                color: red;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: underline;
+                text-transform: uppercase;
+                &:hover{
+                    color: red;
+                }
+
+            }
+
         }
 }
