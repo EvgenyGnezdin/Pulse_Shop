@@ -40,4 +40,75 @@ $(document).ready(function(){
 
         })
       });
+      //Modal
+
+      $('[data-modal=consultation]').on('click', function() {
+        $('.overley, #consultation').fadeIn('slow');
+      })
+
+      $('.modal__close').on('click', function() {
+        $('.overley, #consultation, #order, #thanks').fadeOut('slow');
+      })
+
+      $('.button_tabs').each(function(i) {
+        $(this).on('click', function() {
+          $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+          $('.overley, #order').fadeIn('slow');
+        })
+      })
+
+
+      //Validation
+      function validateForm (form){
+        $(form).validate({
+          rules: {
+            name: 'required',
+            phone: 'required',
+            email: {
+              required: true,
+              email: true,
+            }
+          },
+          messages: {
+            name: {
+              required: 'Введите свое имя'
+            },
+            phone: {
+              required: 'Введите свой номер телефона'
+            }, 
+            email: {
+              required: 'Введите свой адрес почты',
+              email: 'Неправильно введен адрес почты'
+            },
+          }
+        });
+      };
+      validateForm('#consultation-form');
+      validateForm('#consultation form');
+      validateForm('#order form');
+
+
+      $('input[name=phone]').mask("+7 (999) 999-9999");
+
+
+      // Отправка форм на сервер
+      $('form').submit(function(e) {
+        e.preventDefault();
+        if (!$(this).valid()) {
+          return;
+        }
+
+        $.ajax({
+          type: 'POST',
+          url: 'mailer/phpmailer/smart.php',
+          data: $(this).serialize()
+        }).done(function() {
+          $(this).find('input').val('');
+          $('#consultation, #order').fadeOut('slow');
+          $('.overley, #thanks').fadeIn('slow');
+
+          $('form').trigger('reset');
+        });
+        return false;
+      });
 });
