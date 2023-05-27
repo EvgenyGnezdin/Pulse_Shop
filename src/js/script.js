@@ -100,7 +100,7 @@ $(document).ready(function(){
 
         $.ajax({
           type: 'POST',
-          url: 'mailer/phpmailer/smart.php',
+          url: 'mailer/smart.php',
           data: $(this).serialize()
         }).done(function() {
           $(this).find('input').val('');
