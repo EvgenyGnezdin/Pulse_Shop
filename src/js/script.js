@@ -87,28 +87,35 @@ $(document).ready(function(){
       validateForm('#consultation form');
       validateForm('#order form');
 
-
+      
       $('input[name=phone]').mask("+7 (999) 999-9999");
 
 
       // Отправка форм на сервер
       $('form').submit(function(e) {
         e.preventDefault();
-        if (!$(this).valid()) {
-          return;
-        }
 
         $.ajax({
-          type: 'POST',
-          url: 'mailer/smart.php',
-          data: $(this).serialize()
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
         }).done(function() {
-          $(this).find('input').val('');
-          $('#consultation, #order').fadeOut('slow');
-          $('.overley, #thanks').fadeIn('slow');
+            $(this).find('input').val("");
+            $('#consultation, #order').fadeOut();
+            $('.overley, #thanks').fadeIn('slow');
 
-          $('form').trigger('reset');
+            $('form').trigger('reset');
         });
         return false;
       });
+
+
+      // Scroll and pageup
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+          $('.pageup').fadeIn();
+        } else{
+          $('.pageup').fadeOut();
+        }
+      })
 });
