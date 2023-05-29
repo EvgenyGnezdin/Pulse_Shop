@@ -14,9 +14,15 @@
         flex-direction: column;
         align-items: center;
         }
-        img{
+        &__icon{
             width: 70px;
             height: 70px;
+            &_animate{
+                animation-name: heartbeat;
+                animation-duration: 2s;
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+            }
         }
         h4{
             margin-top: 35px;
